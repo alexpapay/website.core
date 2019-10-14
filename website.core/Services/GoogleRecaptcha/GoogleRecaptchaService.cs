@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 using website.core.Services.GoogleRecaptcha.Interfaces;
+using website.core.Services.GoogleRecaptcha.Models;
 
 namespace website.core.Services.GoogleRecaptcha
 {
@@ -33,13 +34,13 @@ namespace website.core.Services.GoogleRecaptcha
 
             string jsonResult = postResult.Content.ReadAsStringAsync().Result;
 
-            dynamic jsonData =
-                JsonSerializer.Deserialize<dynamic>(jsonResult, new JsonSerializerOptions
+            GoogleResponse jsonData =
+                JsonSerializer.Deserialize<GoogleResponse>(jsonResult, new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 });
 
-            return jsonData.success == "true";
+            return jsonData.Success;
         }
     }
 }

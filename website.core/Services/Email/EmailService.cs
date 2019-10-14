@@ -3,6 +3,7 @@ using System.Linq;
 using MailKit.Net.Pop3;
 using MailKit.Net.Smtp;
 using MailKit.Security;
+using Microsoft.Extensions.Options;
 using MimeKit;
 using MimeKit.Text;
 using website.core.Services.Email.Interfaces;
@@ -12,9 +13,9 @@ namespace website.core.Services.Email
 {
     public class EmailService : IEmailService
     {
-        private readonly IEmailConfiguration _emailConfiguration;
+        private readonly IOptions<EmailConfiguration> _emailConfiguration;
 
-        public EmailService(IEmailConfiguration emailConfiguration)
+        public EmailService(IOptions<EmailConfiguration> emailConfiguration)
         {
             _emailConfiguration = emailConfiguration;
         }
@@ -38,10 +39,10 @@ namespace website.core.Services.Email
 
             using var emailClient = new SmtpClient();
 
-            emailClient.Connect(_emailConfiguration.SmtpServer, _emailConfiguration.SmtpPort,
+            emailClient.Connect(_emailConfiguration.Value.SmtpServer, _emailConfiguration.Value.SmtpPort,
                 SecureSocketOptions.StartTls);
             emailClient.AuthenticationMechanisms.Remove("XOAUTH2");
-            emailClient.Authenticate(_emailConfiguration.SmtpUsername, _emailConfiguration.SmtpPassword);
+            emailClient.Authenticate(_emailConfiguration.Value.SmtpUsername, _emailConfiguration.Value.SmtpPassword);
 
             emailClient.Send(message);
 
@@ -57,11 +58,11 @@ namespace website.core.Services.Email
         {
             using var emailClient = new Pop3Client();
 
-            emailClient.Connect(_emailConfiguration.PopServer, _emailConfiguration.PopPort, true);
+            emailClient.Connect(_emailConfiguration.Value.PopServer, _emailConfiguration.Value.PopPort, true);
 
             emailClient.AuthenticationMechanisms.Remove("XOAUTH2");
 
-            emailClient.Authenticate(_emailConfiguration.PopUsername, _emailConfiguration.PopPassword);
+            emailClient.Authenticate(_emailConfiguration.Value.PopUsername, _emailConfiguration.Value.PopPassword);
 
             List<EmailMessage> emails = new List<EmailMessage>();
 
