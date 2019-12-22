@@ -1,6 +1,6 @@
-﻿using website.core.Services.GoogleRecaptcha.Interfaces;
+﻿using website.core.Interfaces.GoogleRecaptcha;
 
-namespace website.core.Services.GoogleRecaptcha.Models
+namespace website.core.Models.GoogleRecaptcha
 {
     public class GoogleRecaptchaConfiguration : IGoogleRecaptchaConfiguration
     {

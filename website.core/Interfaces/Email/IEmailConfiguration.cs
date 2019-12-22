@@ -1,4 +1,4 @@
-﻿namespace website.core.Services.Email.Interfaces
+﻿namespace website.core.Interfaces.Email
 {
     public interface IEmailConfiguration
     {

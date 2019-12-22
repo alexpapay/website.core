@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace website.core.Services.GoogleRecaptcha.Models
+namespace website.core.Models.GoogleRecaptcha
 {
-    class GoogleResponse
+    public class GoogleResponse
     {
         [JsonPropertyName("success")]
         public bool Success { get; set; }

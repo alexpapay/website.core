@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace website.core.Services.Email.Models
+namespace website.core.Models.Email
 {
     public class EmailMessage
     {

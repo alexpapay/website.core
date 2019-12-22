@@ -1,6 +1,6 @@
-﻿using website.core.Services.Email.Interfaces;
+﻿using website.core.Interfaces.Email;
 
-namespace website.core.Services.Email.Models
+namespace website.core.Models.Email
 {
     public class EmailConfiguration : IEmailConfiguration
     {

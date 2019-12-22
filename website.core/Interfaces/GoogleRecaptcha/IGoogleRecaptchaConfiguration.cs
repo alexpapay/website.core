@@ -1,4 +1,4 @@
-﻿namespace website.core.Services.GoogleRecaptcha.Interfaces
+﻿namespace website.core.Interfaces.GoogleRecaptcha
 {
     public interface IGoogleRecaptchaConfiguration
     {
