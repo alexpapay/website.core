@@ -7,6 +7,7 @@ namespace website.services.Extensions
     {
         public static void AddInjections(this IServiceCollection services)
         {
+            services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<IGoogleRecaptchaService, GoogleRecaptchaService>();
         }

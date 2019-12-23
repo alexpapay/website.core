@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\website.core\website.core.csproj" />
+    <ProjectReference Include="..\website.dal\website.dal.csproj" />
   </ItemGroup>
 
 </Project>
