@@ -9,7 +9,7 @@ using website.data;
 namespace website.data.Migrations
 {
     [DbContext(typeof(IdentityContext))]
-    [Migration("20191223230953_Default-Admin-User")]
+    [Migration("20191223232427_Default-Admin-User")]
     partial class DefaultAdminUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,15 +47,15 @@ namespace website.data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "98d7cc95-1e7d-4dac-a828-3ccde46447a5",
-                            ConcurrencyStamp = "1c07c806-54ea-4302-9369-03e233f3aee7",
+                            Id = "3832c0f4-af64-4d7b-a3a7-751d5239fbd9",
+                            ConcurrencyStamp = "e6695b2e-b37b-42e6-aa17-4ac87caaba52",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "8e62a352-a224-46cd-acaa-d93b3130457e",
-                            ConcurrencyStamp = "03e373cd-4caa-46b3-a2da-e43e955fc5bd",
+                            Id = "6450ea59-81b2-4884-997b-51044be06439",
+                            ConcurrencyStamp = "f378ea6e-27eb-4736-9f4d-3ec516ec6b06",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -229,18 +229,18 @@ namespace website.data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b3b6a746-4590-4f8b-98aa-1b2c86832ddf",
+                            Id = "8686a6fe-8e30-4e7d-8013-e3499886daba",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "dc5dadea-755a-4b9a-84db-cc55c40ab434",
+                            ConcurrencyStamp = "d740303b-ff54-4636-ae5d-57e6deed1286",
                             Email = "admin@email.com",
                             EmailConfirmed = (short)1,
                             LockoutEnabled = (short)0,
                             NormalizedEmail = "ADMIN@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAENVcUYRRsMlFTFd1Sdo3IQcuNc41ejdTILt7iI0Z+m66bG8is1D39W/k65wBbTgSyQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEj5OsSTVMNfD19LM1lyZuuGaAlGxloj0vtf9QelWP1QZCmXPrbSP0VrGJt+2nyfZA==",
                             PhoneNumber = "123456789",
                             PhoneNumberConfirmed = (short)0,
-                            SecurityStamp = "1199d08f-dd65-48ca-a92d-40718c6c117a",
+                            SecurityStamp = "51fe269a-d702-46e5-b4cc-59558f657ec8",
                             TwoFactorEnabled = (short)0,
                             UserName = "admin"
                         });
