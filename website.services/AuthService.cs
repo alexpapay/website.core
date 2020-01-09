@@ -1,18 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using website.core.Models.Auth;
-using website.dal.Auth;
+using website.dal.Interfaces;
 using website.services.Interfaces;
 
 namespace website.services
 {
     public class AuthService : IAuthService
     {
-        private readonly AuthRepository _identityRepository;
+        private readonly IAuthRepository _authRepository;
 
-        public AuthService(AuthRepository identityRepository)
+        public AuthService(IAuthRepository authRepository)
         {
-            _identityRepository = identityRepository;
+            _authRepository = authRepository;
         }
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace website.services
         /// <returns>List of users.</returns>
         public async Task<List<User>> GetAllUsers()
         {
-            return await _identityRepository.GetAllUsers();
+            return await _authRepository.GetAllUsers();
         }
     }
 }
